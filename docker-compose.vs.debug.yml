@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  oauth2sample.admin:
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages --additionalProbingPath /root/.nuget/fallbackpackages  "bin/Debug/net5.0/Oauth2Sample.Admin.dll" /seed'
+
+  oauth2sample.admin.api:
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+  oauth2sample.sts.identity:
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
